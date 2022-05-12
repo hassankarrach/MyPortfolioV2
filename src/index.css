@@ -1,0 +1,169 @@
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+@import url('http://fonts.cdnfonts.com/css/lemonmilk');
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: url("./Media//fonts/CircularStd-Book.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "D-DIN Condensed";
+  src: url("./Media/fonts/D-DINCondensed-Bold.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mark Pro";
+  src: url("./Media/fonts/MarkPro-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/*RE-SET*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+
+/*VARIABLS*/
+:root {
+  --MainColor :#00e0b5;;
+  --black-color: #1f1c1c;
+  --ParagraphColor  :#8c939d;
+  --Bg : #10101a;
+  --White-Color : #f5f0ec;
+
+  /*FontsVars*/
+  --font-primary :"Circular Std Book", sans-serif;
+  --font-secondary: "Mark Pro", sans-serif;
+  --font-tertiary: "D-DIN Condensed", sans-serif;
+}
+
+body{
+  background-color:  var(--Bg);
+}
+html{
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+
+p{
+  color : var(--ParagraphColor);
+}
+
+
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #1e1e32 !important;
+    fill: #1e1e32 !important;
+    stroke: #1e1e32 !important;
+    transition: 0.15s ease-in-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+  color: #42426c !important;
+  fill: #42426c !important;
+  stroke: #42426c !important;
+}
+
+
+@media(max-width : 768px){
+  .swiper-button-next,
+  .swiper-button-prev {
+     display: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*LocomotiveScroll*/
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden; }
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.has-scroll-smooth body {
+  overflow: hidden; }
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh; }
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap; }
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%; }
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0; }
+  .c-scrollbar:hover {
+    transform: scaleX(1.45); }
+  .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+    opacity: 1; }
+  [data-scroll-direction="horizontal"] .c-scrollbar {
+    width: 100%;
+    height: 10px;
+    top: auto;
+    bottom: 0;
+    transform: scaleY(1); }
+    [data-scroll-direction="horizontal"] .c-scrollbar:hover {
+      transform: scaleY(1.3); }
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab; }
+  .has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing; }
+  [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+    right: auto;
+    bottom: 0; }
