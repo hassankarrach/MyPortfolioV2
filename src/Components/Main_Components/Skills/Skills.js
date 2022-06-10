@@ -18,13 +18,13 @@ SwiperCore.use([Pagination,Navigation,Autoplay]);
 
 function Skills() {
   return (
-    <StyledSkills data-scroll-section>
+    <StyledSkills data-scroll-section id='Skills'>
         <Swiper 
         loop={true} 
         centeredSlides={true}
         spaceBetween={10}
         autoplay={{
-            delay: 4000,
+            delay: 2000,
             disableOnInteraction: false
         }}
         navigation={true} 
@@ -50,6 +50,10 @@ function Skills() {
 
 const StyledSkills = styled.div`
 padding : 0 9%;
+
+@media(max-width : 768px){
+    padding : 0 3%;
+}
 .item{
 display :flex;
 justify-content :center;
@@ -70,12 +74,12 @@ const StyledCard = ({techs, Title,Desc,thumb}) =>{
                 <div className='Content'>
                     <p>{Desc}</p>
                     <div className='theHolderOfIconsHolder😂'>
-                       <h3 className='techTitle'>techs :</h3>
+                       <h2 className='techTitle'>techs :</h2>
                        <div className='IconsHolder'>
                            {
                               techs.map((item,key)=>{
                                 return(
-                                    <Icon iconImg={item.url} iconName={item.name} key={key}/>
+                                    <Icon iconImg={item.url} iconName={item.name} key={key} alt_={item.alt}/>
                                 )
                                })
                            }
@@ -89,7 +93,6 @@ const StyledCard = ({techs, Title,Desc,thumb}) =>{
 
 const StyledCard_ = styled.div`
 width : 75%;
-height: auto;
 background: rgba( 16, 16, 26, 0.25 );
 backdrop-filter: blur( 8.5px );
 -webkit-backdrop-filter: blur( 8.5px );
@@ -104,7 +107,7 @@ overflow : hidden;
 @media (max-width :768px){
     flex-direction : column;
     width : 100%;
-    height: 60vh;
+    height: auto;
 }
 
 h1{
@@ -123,7 +126,7 @@ p{
     background-size  : cover;
     @media (max-width :768px) {
     width : 100%;
-    height: 30%;
+    height: 180px;
     }
 }
 .Right{
@@ -148,6 +151,9 @@ flex-direction : column;
     height : 80%;
     display : flex;
     flex-direction :column;
+   p{
+    margin-bottom :10px;
+   }
     
    .theHolderOfIconsHolder😂{
    display :flex;
@@ -158,6 +164,7 @@ flex-direction : column;
     font-family: var(--font-primary);
     text-transform : uppercase;
     margin-bottom : 12px;
+    font-size : 20px;
    }
     .IconsHolder{
         width : 100%;
@@ -176,11 +183,11 @@ flex-direction : column;
 }
 }
 `
-const Icon = ({iconImg,iconName}) => {
+const Icon = ({iconImg,iconName,alt_}) => {
     return(
         <StyledIcon>
             <div className='Left_'>
-                <img className='SkillIcon' src={iconImg}/>
+                <img width='18px' height='18px' className='SkillIcon' src={iconImg} alt={`${alt_} icon`}/>
             </div>
             <div className='Right_'>
                 <h3>{iconName}</h3>

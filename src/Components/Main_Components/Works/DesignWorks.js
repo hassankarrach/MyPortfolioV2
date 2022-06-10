@@ -4,6 +4,15 @@ import { motion } from 'framer-motion'
 import DesignCrowd from '../../../Media/Logo/DesignCrowd.png'
 import Fiverr from '../../../Media/Logo/Fiverr.png'
 
+//MaterialUI
+import Checkbox from '@mui/material/Checkbox';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
 //tags
 const Tags =[
   {
@@ -107,6 +116,11 @@ function DesignWorks() {
   },[ActiveTag])
 
 
+
+  const handleChange = (event, value) => {
+    setActiveTag(value.name);
+  };
+
   return (
     <StyledDesignWorks data-scroll-section>
       <div className='Container'> 
@@ -121,6 +135,37 @@ function DesignWorks() {
                  })
                }
           </div>
+
+          <div className='MobileFilter'>
+          <Autocomplete
+            id="checkboxes-tags-demo"
+            className='checkBox'
+            options={Tags}
+            getOptionLabel={(option) => option.name}
+            fullWidth
+
+
+            onChange={handleChange}
+            renderOption={(props, option, { selected }) => (
+              <li {...props}>
+                <Checkbox
+                  icon={icon}
+                  checkedIcon={checkedIcon}
+                  style={{ marginRight: 8  }}
+                  checked={selected}
+                />
+                {option.name}
+              </li>
+            )}
+            
+            style={{ width: '100%' }}
+            renderInput={(params) => (
+              <TextField {...params} label="Checkboxes" placeholder="Favorites" />
+            )}
+          />
+          </div>
+
+          
           <motion.div className='Designs' layout
       initial={{opacity:0}}
       animate={{opacity:1}}
@@ -161,7 +206,6 @@ function DesignWorks() {
 }
 
 const StyledDesignWorks = styled.div`
-height : auto;
 display : flex;
 justify-content : center;
 align-items : center;
@@ -172,11 +216,18 @@ background-color : var(--White-Color);
   height : 100%;
   width : 100vw;
   margin : 10px 9%;
+
+  @media (max-width : 768px){
+  margin : 10px 0%;
+  }
   .Filter{
   height: 60px;
   display : flex;
   align-items : center;
   justify-content : center;
+  @media(max-width : 768px){
+    display : none
+  }
   .Tag.active{
     background-color : white;
   }
@@ -195,9 +246,24 @@ background-color : var(--White-Color);
   }
   }
 
+  .MobileFilter{
+    display :none;
+    @media (max-width :768px){
+      display :block;
+      width : 100%;
+      padding : 10px;
+      position : sticky;
+      top : 5%;
+      z-index :999;
+    }
+  }
+
   .Designs{
+         --auto-grid-min-size: 16rem;
          display: grid;
-         grid-template-columns : 25% 25% 25% 25%;
+         grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+         grid-gap: 1rem;
+
          column-gap : 10px;
          row-gap: 10px;
          justify-items  : center;
@@ -205,22 +271,12 @@ background-color : var(--White-Color);
          align-items  :center;
          align-content:center;
          grid-auto-flow : row;
-
          padding: 10px;
 
-         @media(max-width : 768px){
-            grid-template-columns : 100%;
-         }
-         @media (min-width: 600px) {
-           grid-template-columns: repeat(2, 0fr);
-         }
-         @media (min-width: 900px) {
-           grid-template-columns: repeat(4, 0fr);
-         }
          
 
         .item{
-       width :360px;
+       width :100%;
        height :250px;
        background-color : white;
        border-radius :5px;
@@ -243,7 +299,21 @@ background-color : var(--White-Color);
     border-radius : 10px;
     display : flex;
     align-items :center;
+    justify-content :center;
     justify-content :space-around;
+
+    &:before{
+      content: "";
+      height :8%;
+      width : 100%;
+      background-color : var(--Bg);
+      position : absolute;
+      bottom :0;
+      z-index: -99; 
+      @media (max-width : 768px){
+      height :90%;
+      }
+   }
 
     h2{
       font-family: 'Lemon/Milk light', sans-serif;

@@ -1,26 +1,30 @@
-import React ,{useState, useContext} from 'react'
+import React ,{useState, useEffect, useRef} from 'react'
 import styled from "styled-components"
 import logoWhite from '../../Media/Logo/logoWhite.png'
 import logo from '../../Media/Logo/logo.png'
 //React Link
-import {Link} from 'react-router-dom'
+import { Link } from 'react-scroll'
 //FramerMotion
 import { motion ,AnimatePresence } from "framer-motion"
 import Fade from '@mui/material/Fade';
 
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+
 
 
 function Navbar() {
     const [toggle ,setToggle]= useState(false);
-
     return (
       <>
-         <Nav>
-            <Link to='/'>
-            <Logo onClick={()=>{setToggle(false)}} src={logoWhite}
+         <Nav className='Navbar'>
+
+            <Logo width='33px' height='33px' alt='hassan karrach logo' title='hassan karrach logo' onClick={()=>{setToggle(false)}} src={logoWhite}
             ></Logo>
-            </Link>
+
             <div onClick={()=>{setToggle(!toggle)}}
             id="nav-icon3"
             className={`${toggle ? "open" : ""}`}
@@ -30,60 +34,87 @@ function Navbar() {
               <span></span>
               <span></span>
             </div>
+
         </Nav>
 
                  <Fade in={toggle} timeout ={460}>
                        <StyledMenu>
                         <motion.div className='OverlayContent'>
-                           <Link to=''>
-                           <motion.div
+
+
+                            <Link 
+                             style={{cursor:'pointer'}}
+                             spy={true}
+                             smooth={true}
+                             offset={-300}
+                             duration={200}
+                             to='Main'>
+                             <motion.div
                              onClick={()=>{setToggle(false)}}
                              whileHover={{scale: 1.1}}
                              >
-                          <motion.a
-                          onClick={()=>{setToggle(false)}}
-                          whileHover={{color : '#00dfb5'}}
-                          
-                          href='#'>Home</motion.a>
+                             <motion.a
+                             onClick={()=>{setToggle(false)}}
+                             whileHover={{color : '#7974c0'}}
+                             >Home</motion.a>
                              </motion.div>
-                           </Link>
-                           
-                           <Link to='/About'>
+                             </Link>
+
+
+                             <Link 
+                             style={{cursor:'pointer'}}
+                             spy={true}
+                             smooth={true}
+                             offset={-100}
+                             duration={200}
+                             to='AboutMe'>
                              <motion.div
                              onClick={()=>{setToggle(false)}}
                              whileHover={{scale: 1.1 }}
                              >
                              <motion.a
-                              whileHover={{color:'#00dfb5'}}
-                             href='#'>About Me
+                              whileHover={{color:'#7974c0'}}
+                             >About Me
                              </motion.a>
                              </motion.div>
-                           </Link>
-                          
-                          <Link to='Graphic-Design'>
-                          <motion.div
-                             onClick={()=>{setToggle(false)}}
-                             whileHover={{scale: 1.1}}
-                             >
-                          <motion.a
-                          onClick={()=>{setToggle(false)}}
-                          whileHover={{color : '#00dfb5'}}
-                          href='#'>Graphic Design</motion.a>
-                          </motion.div>
-                          </Link>
-                          
+                             </Link>
 
-                          <Link to='Developement'>
-                          <motion.div
+
+                             <Link 
+                             style={{cursor:'pointer'}}
+                             spy={true}
+                             smooth={true}
+                             offset={-300}
+                             duration={200}
+                             to='Skills'>
+                             <motion.div
                              onClick={()=>{setToggle(false)}}
                              whileHover={{scale: 1.1}}
                              >
-                          <motion.a
-                          onClick={()=>{setToggle(false)}}
-                          whileHover={{color : '#00dfb5'}}
-                          href='#'>Coding</motion.a>
-                          </motion.div>
-                          </Link>
+                             <motion.a
+                             onClick={()=>{setToggle(false)}}
+                             whileHover={{color : '#7974c0'}}
+                             >Skills</motion.a>
+                             </motion.div>
+                             </Link>
+                          
+                             <Link 
+                             style={{cursor:'pointer'}}
+                             spy={true}
+                             smooth={true}
+                             offset={-300}
+                             duration={200}
+                             to='Works'>
+                             <motion.div
+                             onClick={()=>{setToggle(false)}}
+                             whileHover={{scale: 1.1}}
+                             >
+                             <motion.a
+                             onClick={()=>{setToggle(false)}}
+                             whileHover={{color : '#7974c0'}}
+                             >Works</motion.a>
+                             </motion.div>
+                             </Link>
 
                         </motion.div>
                        </StyledMenu>
@@ -188,12 +219,10 @@ export const StyledMenu = styled.div`
   height: 100%;
   width : 100%;
   position :fixed;
-  background: rgba( 255, 255, 255, 0.4 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3.5px );
--webkit-backdrop-filter: blur( 3.5px );
+  background: linear-gradient(0deg, rgba(38,38,62,1) 0%, rgba(38,38,62,0.4) 100%);
+backdrop-filter: blur( 6px );
+-webkit-backdrop-filter: blur( 6px );
   z-index : 998;
-  font-family: 'Nanum Gothic';
 
   
 
@@ -206,7 +235,7 @@ backdrop-filter: blur( 3.5px );
   flex-direction : column;
   align-items : center;
   div{
-  margin-bottom : 30px
+  margin-bottom : 30px;
   }
 }
 
@@ -215,6 +244,8 @@ backdrop-filter: blur( 3.5px );
   text-decoration :none;
   text-transform : uppercase;
   font-size: 25px;
+  color :white;
+  font-family: 'Lemon/Milk light', sans-serif;
 }
 
 ul li:hover ~ .Cursor{

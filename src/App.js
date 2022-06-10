@@ -1,17 +1,20 @@
+import { useEffect,useState } from "react";
 import Main from "./Pages/Main";
-import Navbar from './Components/Navbar/Navbar'
-
-
-function handleExitComplete() {
-  if (typeof window !== 'undefined') {
-    window.scrollTo({ top: 0 })
-  }
-}
+import Loader from './Pages/Loader/Loader'
 
 function App() {
+  const[isLoading, setIsLoading] = useState(true);
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false);
+    }, 4500)
+  },[])
+
   return (
+    isLoading?
+    <Loader/>
+    :
     <div className="App">
-      <Navbar/>
       <Main/>
     </div>
   );

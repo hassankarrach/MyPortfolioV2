@@ -29,54 +29,54 @@ import PremierPro from '../../../Media/Skills/icons/Design/PremierPro.png'
 
 
 export const Blockchain = [
-    {name :'openzeppelin', url :openzeppelin},
-    {name :'MetaMask',     url :MetaMask},
-    {name :'Solidity',     url :Solidity},
-    {name :'Remix',        url :Remix},
-    {name :'Truffle',      url :Truffle},
-    {name :'EtherJs',      url :EtherJs},
-    {name :'Web3',         url :Web3},
-    {name :'HardHat',      url :HardHat}
+    {name :'openzeppelin',alt :'openzeppelin', url :openzeppelin},
+    {name :'MetaMask',alt :'MetaMask',  url :MetaMask},
+    {name :'Solidity', alt:'Solidity',    url :Solidity},
+    {name :'Remix',  alt :'Remix'     ,url :Remix},
+    {name :'Truffle', alt :'Truffle'  ,  url :Truffle},
+    {name :'EtherJs',  alt:'EtherJs' , url :EtherJs},
+    {name :'Web3',   alt  :'Web3'   , url :Web3},
+    {name :'HardHat',  alt :'HardHat',   url :HardHat}
 ]
 
 export const Web = [
-    {name :'React', url :React},
-    {name :'Html',     url :Html},
-    {name :'Css',     url :Css},
-    {name :'JavaScript',        url :JavaScript},
-    {name :'NodeJs',      url :NodeJs},
-    {name :'CSharp',      url :CSharp},
-    {name :'Php',         url :Php},
-    {name :'Sql',      url :Sql}
+    {name :'React', alt:'React', url :React},
+    {name :'Html',  alt:'Html',    url :Html},
+    {name :'Css',   alt:'Css',   url :Css},
+    {name :'JavaScript',    alt:'JavaScript',     url :JavaScript},
+    {name :'NodeJs',  alt:'NodeJs',     url :NodeJs},
+    {name :'CSharp',   alt:'CSharp',    url :CSharp},
+    {name :'Php',     alt:'Php',     url :Php},
+    {name :'Sql',   alt:'Sql',    url :Sql}
 ]
 
 export const Design = [
-    {name :'Photoshop', url :Photoshop},
-    {name :'Illustrator',     url :Illustrator},
-    {name :'PremierPro',     url :PremierPro}
+    {name :'Photoshop', alt:'Photoshop',url :Photoshop},
+    {name :'Illustrator',  alt:'Illustrator',   url :Illustrator},
+    {name :'PremierPro',  alt:'PremierPro',   url :PremierPro}
 ]
 
 
 export const Portfolio  = [
-    {name :'React', url :React},
-    {name :'Html',     url :Html},
-    {name :'Css',     url :Css},
-    {name :'JavaScript',  url :JavaScript},
-    {name :'LocomotiveScroll',  url :LocomotiveScroll},
-    {name :'Gsap',  url :Gsap},
-    {name :'StyledComponents',  url :StyledComponents},
+    {name :'React',alt:'React', url :React},
+    {name :'Html',   alt:'Html',  url :Html},
+    {name :'JavaScript', alt:'JavaScript', url :JavaScript},
+    {name :'Css',  alt:'Css',   url :Css},
+    {name :'LocomotiveScroll', alt:'LocomotiveScroll', url :LocomotiveScroll},
+    {name :'Gsap', alt:'Gsap', url :Gsap},
+    {name :'StyledComponents', alt:'StyledComponents', url :StyledComponents},
 ]
 
 export const abundeez = [
-    {name :'React', url :React},
-    {name :'Html',     url :Html},
-    {name :'Css',     url :Css},
-    {name :'JavaScript',  url :JavaScript},
-    {name :'StyledComponents',  url :StyledComponents},
-    {name :'EtherJs',      url :EtherJs},
-    {name :'Web3',         url :Web3},
-    {name :'openzeppelin', url :openzeppelin},
-    {name :'MetaMask',     url :MetaMask},
-    {name :'Solidity',     url :Solidity},
-    {name :'Remix',        url :Remix},
+    {name :'MetaMask',  alt :'MetaMask',   url :MetaMask},
+    {name :'Html', alt:'Html',    url :Html},
+    {name :'JavaScript', alt:'JavaScript', url :JavaScript},
+    {name :'Css', alt:'Css',    url :Css},
+    {name :'EtherJs',   alt:'EtherJs',   url :EtherJs},
+    {name :'Web3',    Web3:'Web3',     url :Web3},
+    {name :'openzeppelin',alt:'openzeppelin', url :openzeppelin},
+    {name :'React',alt:'React', url :React},
+    {name :'Solidity',   alt:'Solidity',  url :Solidity},
+    {name :'Remix',     alt:'Remix',   url :Remix},
+    {name :'StyledComponents', alt:'StyledComponents', url :StyledComponents}
 ]
