@@ -2,7 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-@import url('http://fonts.cdnfonts.com/css/lemonmilk');
+@font-face {
+  font-family: 'Lemon/Milk';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lemon/Milk'), url('https://fonts.cdnfonts.com/s/14917/LemonMilk.woff') format('woff');
+}
+@font-face {
+  font-family: 'Lemon/Milk';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lemon/Milk'), url('https://fonts.cdnfonts.com/s/14917/LemonMilkitalic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Lemon/Milk';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Lemon/Milk'), url('https://fonts.cdnfonts.com/s/14917/LemonMilklightitalic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Lemon/Milk';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lemon/Milk'), url('https://fonts.cdnfonts.com/s/14917/LemonMilkbold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Lemon/Milk';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lemon/Milk'), url('https://fonts.cdnfonts.com/s/14917/LemonMilkbolditalic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Lemon/Milk light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lemon/Milk light'), url('https://fonts.cdnfonts.com/s/14917/LemonMilklight.woff') format('woff');
+}
+
 @font-face {
   font-family: "Circular Std Book";
   src: url("./Media//fonts/CircularStd-Book.woff") format("woff");
@@ -10,7 +46,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "D-DIN Condensed";
   src: url("./Media/fonts/D-DINCondensed-Bold.woff") format("woff");
