@@ -77,3 +77,25 @@ export const abundeez = [
   { name: "Remix", alt: "Remix", url: Remix },
   { name: "StyledComponents", alt: "StyledComponents", url: StyledComponents },
 ];
+
+export const Wydad = [
+  { name: "NextJs", alt: "NextJs", url: NextJs },
+  { name: "Html", alt: "Html", url: Html },
+  { name: "JavaScript", alt: "JavaScript", url: JavaScript },
+  { name: "Css", alt: "Css", url: Css },
+  { name: "Gsap", alt: "Gsap", url: Gsap },
+  { name: "StyledComponents", alt: "StyledComponents", url: StyledComponents },
+  { name: "Swiper.Js", alt: "Swiper.Js" },
+];
+
+export const Conveasy = [
+  { name: "NextJs", alt: "NextJs", url: NextJs },
+  { name: "Html", alt: "Html", url: Html },
+  { name: "JavaScript", alt: "JavaScript", url: JavaScript },
+  { name: "Css", alt: "Css", url: Css },
+  { name: "Gsap", alt: "Gsap", url: Gsap },
+  { name: "StyledComponents", alt: "StyledComponents", url: StyledComponents },
+  { name: "Swiper.Js", alt: "Swiper.Js" },
+  { name: "Socket.io", alt: "Socket.io" },
+  { name: "WebRTC", alt: "WebRTC" },
+];
