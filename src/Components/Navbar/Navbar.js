@@ -25,7 +25,7 @@ function Navbar() {
           onClick={() => {
             setToggle(false);
           }}
-          src={"/Media/Logo/logoWhite.png"}
+          src={logoWhite}
         ></Logo>
 
         <div
